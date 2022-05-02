@@ -1,9 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <title>Log in - Sign Up</title>
-  <link rel="stylesheet" type="text/css" href="login-signup.css">
+  <meta charset="UTF-8">
+  <title>Login | Sign Up</title>
+  <head>
+  <meta charset="UTF-8">
+  <title>Gene-Disease Association</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head><link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
+<!-- partial:index.partial.html -->
 <section class="forms-section">
   <h1 class="section-title">Gene-Disease Association</h1>
   <div class="forms">
@@ -53,5 +61,8 @@
     </div>
   </div>
 </section>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
 </body>
 </html>
