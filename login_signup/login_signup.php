@@ -20,7 +20,7 @@
         Login
         <span class="underline"></span>
       </button>
-      <form class="form form-login" action="connection1.php" method="POST"> <!-- Action specifies the location to transfer the submitted user information; Connection 1 is for login-->
+      <form class="form form-login" action="connection_login.php" method="POST"> <!-- Action specifies the location to transfer the submitted user information -->
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>
           <div class="input-block">
@@ -40,7 +40,7 @@
         Register Doctor
         <span class="underline"></span>
       </button>
-      <form class="form form-signup" action="connection2.php" method="POST"> <!-- Connection 2 is to register-->
+      <form class="form form-signup" action="connection_register.php" method="POST">
         <fieldset>
           <legend>Please, enter your email, password and password confirmation for sign up.</legend>
           <div class="input-block">
