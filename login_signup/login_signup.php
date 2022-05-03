@@ -21,6 +21,12 @@
         <span class="underline"></span>
       </button>
       <form class="form form-login" action="connection_login.php" method="POST"> <!-- Action specifies the location to transfer the submitted user information -->
+<!--           <?php
+            // if(isset($_SESSION["error"])){
+            //   $error = $_SESSION["error"];
+            //   echo "<span>$error</span>";
+            // }
+          ?> -->
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>
           <div class="input-block">
@@ -66,3 +72,7 @@
 
 </body>
 </html>
+
+<!-- <?php
+    //unset($_SESSION["error"]);
+?> -->
