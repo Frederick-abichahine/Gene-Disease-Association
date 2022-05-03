@@ -2,7 +2,7 @@ Gene – Disease Association Relational Model
 Frederick Abi Chahine
 
 Cases (id, treatments, patients_id, hospitals_id)
-Doctors (id, first_name, last_name, mobile_number, email, specialty)
+Doctors (id, first_name, last_name, mobile_number, email, specialty, password)
 Patients (id, first_name, last_name, mobile_number, email, biometrics_id)
 Biometrics (id, age, gender, ethnicity, height, weight, blood_type)
 Hospitals (id, location, name)
