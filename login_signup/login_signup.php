@@ -48,7 +48,23 @@
       </button>
       <form class="form form-signup" action="connection_register.php" method="POST">
         <fieldset>
-          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+          <legend>Please enter the first name, last name, mobile number, email, password and password confirmation for the doctor.</legend>
+          <div class="input-block">
+            <label for="signup-email">First Name</label>
+            <input id="signup-email" type="text" name="first_name" required placeholder="Hello">
+          </div>
+          <div class="input-block">
+            <label for="signup-email">Last Name</label>
+            <input id="signup-email" type="text" name="last_name" required placeholder="World">
+          </div>
+          <div class="input-block">
+            <label for="signup-email">Mobile Number</label>
+            <input id="signup-email" type="text" name="mobile_number" required placeholder="+123-45-678-901">
+          </div>
+          <div class="input-block">
+            <label for="signup-email">Specialty</label>
+            <input id="signup-email" type="text" name="specialty" required placeholder="Dermatologist">
+          </div>
           <div class="input-block">
             <label for="signup-email">E-mail</label>
             <input id="signup-email" type="email" name="email" required placeholder="hello@world.com">
