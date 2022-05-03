@@ -18,4 +18,7 @@
 		//$_SESSION["error"] = $error;
 		header('location:login_signup.php');
 	}
+
+	$select -> close();
+	$connect -> close();
 ?>
