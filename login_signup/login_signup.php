@@ -21,12 +21,13 @@
         <span class="underline"></span>
       </button>
       <form class="form form-login" action="connection_login.php" method="POST"> <!-- Action specifies the location to transfer the submitted user information -->
-<!--           <?php
-            // if(isset($_SESSION["error"])){
-            //   $error = $_SESSION["error"];
-            //   echo "<span>$error</span>";
-            // }
-          ?> -->
+            <?php
+              session_start();
+              if(isset($_SESSION["error"])){
+                $error = $_SESSION["error"];
+                echo "<span style=\"color:red\"> $error</span>";
+              }
+            ?>
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>
           <div class="input-block">
@@ -47,8 +48,19 @@
         <span class="underline"></span>
       </button>
       <form class="form form-signup" action="connection_register.php" method="POST">
+
+            <?php
+              if(isset($_SESSION["error"])){
+                $error = $_SESSION["error"];
+                echo "<span style=\"color:red\"> $error</span>";
+              }
+            ?>
         <fieldset>
           <legend>Please enter the first name, last name, mobile number, email, password and password confirmation for the doctor.</legend>
+          <div class="input-block">
+            <label for="signup-password">Admin Access Code</label> <!-- Simply to ensure that no one can register a doctor unless they are an admin -->
+            <input id="signup-password" type="password" name="admin_code" required placeholder="Code">
+          </div>
           <div class="input-block">
             <label for="signup-email">First Name</label>
             <input id="signup-email" type="text" name="first_name" required placeholder="Hello">
@@ -73,10 +85,10 @@
             <label for="signup-password">Password</label>
             <input id="signup-password" type="password" name="password" required placeholder="Password">
           </div>
-          <div class="input-block">
+<!--           <div class="input-block">
             <label for="signup-password-confirm">Confirm password</label>
             <input id="signup-password-confirm" type="password" required placeholder="Password">
-          </div>
+          </div> -->
         </fieldset>
         <button type="submit" class="btn-signup">Continue</button>
       </form>
@@ -89,6 +101,6 @@
 </body>
 </html>
 
-<!-- <?php
-    //unset($_SESSION["error"]);
-?> -->
+<?php
+  unset($_SESSION["error"]);
+?> 
