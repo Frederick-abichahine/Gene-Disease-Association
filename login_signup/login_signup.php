@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>Login | Register</title>
   <head>
-  <meta charset="UTF-8">
-  <title>Gene-Disease Association</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	<title>Gene-Disease Association</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head><link rel="stylesheet" href="./style.css">
 
 </head>
