@@ -61,11 +61,12 @@
         <a class="navbar-brand"><span class="text-primary"> Dr.</span> <?php
                                                                         if(isset($_SESSION['details'])) {
                                                                           $details = $_SESSION['details'];
-                                                                          echo "<span> $details[1] $details[2] </span>";
+                                                                          echo "<span> $details[1] $details[2] - $details[3]</span>";
                                                                         }
                                                                       ?> </a>
 
-        <!-- <form action="#">
+
+        <!-- <form action="#"> 
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
               <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
@@ -81,14 +82,14 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Profile</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="#">Edit Profile</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
-            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Doctors</a>
+            </li> -->
             <!-- <li class="nav-item">
               <a class="nav-link" href="blog.html">News</a>
             </li> -->
@@ -109,7 +110,7 @@
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make a difference</span>
         <h1 class="display-4">Gene-Disease Association</h1>
-        <a href="#" class="btn btn-primary">Start Search</a>
+        <a href="search_tool.php" class="btn btn-primary">Start Search</a>
       </div>
     </div>
   </div>
@@ -121,25 +122,28 @@
           <div class="col-md-4 py-3 py-md-0">
             <div class="card-service wow fadeInUp">
               <div class="circle-shape bg-secondary text-white">
-                <span class="mai-chatbubbles-outline"></span>
+                <span class="mai-document-text-outline"></span>
               </div>
-              <p><span>Cases</span> hi </p> <!-- <p><span>Cases</span> with a doctors</p> -->
+              <a class="nav-link" href="index.php"><span>Cases</span></a>
+              <!--<p><span>Cases</span> hi </p> --><!-- <p><span>Cases</span> with a doctors</p> -->
             </div>
           </div>
           <div class="col-md-4 py-3 py-md-0">
             <div class="card-service wow fadeInUp">
               <div class="circle-shape bg-primary text-white">
-                <span class="mai-shield-checkmark"></span>
+                <span class="mai-person-outline"></span>
               </div>
-              <p><span>One</span>-Health Protection</p>
+              <a class="nav-link" href="index.php"><span>Doctors</span></a>
+              <!--<p><span>One</span>-Health Protection</p>-->
             </div>
           </div>
           <div class="col-md-4 py-3 py-md-0">
             <div class="card-service wow fadeInUp">
               <div class="circle-shape bg-accent text-white">
-                <span class="mai-basket"></span>
+                <span class="mai-home-outline"></span>
               </div>
-              <p><span>One</span>-Health Pharmacy</p>
+              <a class="nav-link" href="index.php"><span>Hospitals</span></a>
+              <!--<p><span>One</span>-Health Pharmacy</p>-->
             </div>
           </div>
         </div>
