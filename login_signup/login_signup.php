@@ -27,6 +27,10 @@
                 $error = $_SESSION["error"];
                 echo "<span style=\"color:red\"> $error</span>";
               }
+              else if (isset($_SESSION["success"])){
+                $success = $_SESSION["success"];
+                echo "<span style=\"color:green\"> $success</span>";
+              }
             ?>
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>
@@ -53,6 +57,10 @@
               if(isset($_SESSION["error"])){
                 $error = $_SESSION["error"];
                 echo "<span style=\"color:red\"> $error</span>";
+              }
+              else if (isset($_SESSION["success"])){
+                $success = $_SESSION["success"];
+                echo "<span style=\"color:green\"> $success</span>";
               }
             ?>
         <fieldset>
@@ -100,7 +108,7 @@
 
 </body>
 </html>
-
 <?php
   unset($_SESSION["error"]);
+  unset($_SESSION["success"]);
 ?> 
