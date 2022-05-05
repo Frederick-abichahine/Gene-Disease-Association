@@ -4,13 +4,13 @@
 	mysqli_select_db($connect, 'gene-disease-association-db');
 	$admin = 11111;
 
-	$first_name = $_POST['first_name'];
-	$last_name = $_POST['last_name'];
-	$mobile_number = $_POST['mobile_number'];
-	$email = $_POST['email'];
-	$specialty = $_POST['specialty'];
-	$password = $_POST['password'];
-	$admin_code = $_POST['admin_code'];
+	$first_name = mysqli_real_escape_string($connect, $_POST['first_name']);
+	$last_name = mysqli_real_escape_string($connect, $_POST['last_name']);
+	$mobile_number = mysqli_real_escape_string($connect, $_POST['mobile_number']);
+	$email = mysqli_real_escape_string($connect, $_POST['email']);
+	$specialty = mysqli_real_escape_string($connect,$_POST['specialty']);
+	$password = mysqli_real_escape_string($connect,$_POST['password']);
+	$admin_code = mysqli_real_escape_string($connect, $_POST['admin_code']);
 	$hash_pass = hash('sha256', $password);
 	
 

@@ -85,7 +85,7 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Edit Profile</a>
+              <a class="nav-link" href="../edit_profile/edit_profile.php">Edit Profile</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#">Doctors</a>
@@ -124,7 +124,7 @@
               <div class="circle-shape bg-secondary text-white">
                 <span class="mai-document-text-outline"></span>
               </div>
-              <a class="nav-link" href="index.php"><span>Cases</span></a>
+              <a class="nav-link" href="cases.php"><span>Cases</span></a>
               <!--<p><span>Cases</span> hi </p> --><!-- <p><span>Cases</span> with a doctors</p> -->
             </div>
           </div>
@@ -133,7 +133,7 @@
               <div class="circle-shape bg-primary text-white">
                 <span class="mai-person-outline"></span>
               </div>
-              <a class="nav-link" href="index.php"><span>Doctors</span></a>
+              <a class="nav-link" href="doctors.php"><span>Doctors</span></a>
               <!--<p><span>One</span>-Health Protection</p>-->
             </div>
           </div>

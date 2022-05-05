@@ -3,8 +3,8 @@
 
 	$connect = mysqli_connect('localhost', 'root', '');
 	mysqli_select_db($connect, 'gene-disease-association-db');
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+	$email = mysqli_real_escape_string($connect, $_POST['email']);
+	$password = mysqli_real_escape_string($connect, $_POST['password']);
 	$hash_pass = hash('sha256', $password);
 
 	$error = "Invalid Email or Password.";

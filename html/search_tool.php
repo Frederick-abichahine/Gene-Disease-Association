@@ -141,6 +141,7 @@
 
   <footer class="page-footer">
     <div class="container">
+      <hr>
       <p id="copyright">Copyright &copy; 2022 - Frederick Abi Chahine. All right reserved</p>
 
       
