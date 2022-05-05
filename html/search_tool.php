@@ -30,15 +30,6 @@
       <div class="container">
         <a class="navbar-brand"><span class="text-primary">Gene</span>-Disease Association</a>
 
-        <!-- <form action="#">
-          <div class="input-group input-navbar">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
-          </div>
-        </form> -->
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,26 +57,40 @@
             <li class="breadcrumb-item active" aria-current="page">Blog</li>
           </ol>
         </nav> -->
-        <h1 class="font-weight-normal"><div class="col-lg-4">
+        <h1 class="font-weight-normal"> <div class="row"> <div class="col-lg-4"></div> <div class="col-lg-4">
           <div class="sidebar">
             <div class="sidebar-block">
               <h3 class="sidebar-title">Search</h3> <!-- justify-content-center -->
-              <form action="connection_gene.php" class="search-form">
+              <form action="connection_gene.php" class="search-form" method="POST">
                 <div class="form-group">
                   <input type="text" name = "disease" class="form-control" placeholder="Enter disease name...">
                   <button type="submit" class="btn"><span class="icon mai-search"></span></button>
                 </div>
               </form>
-            </div></h1>
+            </div> <div class="col-lg-4"></div> <div class="col-lg-4"> </div> </h1>
       </div> <!-- .container -->
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
+
+  <?php
+  session_start();
+  if(isset($_SESSION["error"])){
+    $error = $_SESSION["error"];
+    echo "<span style=\"color:red\"> $error</span>";
+  }
+  else {
+    //while
+  ?>
 
   <div class="page-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
           <div class="row">
+            <!-- <?php  
+            //for($i=0; $i < 4; $i++) {
+
+            ?> -->
             <div class="col-sm-6 py-3">
                   <div class="card-blog">
                     <div class="body">
@@ -93,10 +98,9 @@
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
-                                                  session_start();
                                                   if(isset($_SESSION['gene'])) {
                                                     $gene = $_SESSION['gene'];
-                                                    echo "<span> sequence: $gene[1] </span>";
+                                                    echo "<span> Code: $gene[2] </span>";
                                                   }
                                                 ?> </h5>
                         </div>
@@ -106,7 +110,7 @@
                           <h5 class="post-title"> <?php
                                                   if(isset($_SESSION['gene'])) {
                                                     $gene = $_SESSION['gene'];
-                                                    echo "<span> code: $gene[2] </span>";
+                                                    echo "<span> Location: $gene[3] </span>";
                                                   }
                                                 ?> </h5>
                         </div>
@@ -116,7 +120,7 @@
                           <h5 class="post-title"> <?php
                                                   if(isset($_SESSION['gene'])) {
                                                     $gene = $_SESSION['gene'];
-                                                    echo "<span> location: $gene[3] </span>";
+                                                    echo "<span> Sequence: $gene[1]  </span>";
                                                   }
                                                 ?> </h5>
                         </div>
@@ -124,70 +128,16 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="col-sm-6 py-3">
-                  <div class="card-blog">
-                    <div class="body">
-                      <h3 class="sidebar-title">Gene</h3>
-                      <div class="blog-item">
-                        <div class="content">
-                          <h5 class="post-title">TESTING THIS LALALALALALALA </h5>
-                        </div>
-                      </div>
-                      <div class="blog-item">
-                        <div class="content">
-                          <h5 class="post-title">MY BABIESSSSS WORKKKKKVVVV </h5>
-                        </div>
-                      </div>
-                      <div class="blog-item">
-                        <div class="content">
-                          <h5 class="post-title">HELLOOOOOO PEOPLEEEEEE</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-            <!-- <div class="col-12 my-5">
-              <nav aria-label="Page Navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                  </li>
-                  <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div> -->
           </div> <!-- .row -->
         </div>
-        <!-- <div class="col-lg-4">
-          <div class="sidebar">
-            <div class="sidebar-block">
-              <h3 class="sidebar-title">Search</h3>
-              <form action="#" class="search-form">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                  <button type="submit" class="btn"><span class="icon mai-search"></span></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> 
- -->
       </div> <!-- .row -->
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
-  
+  <?php
+    //}
+  }
+  ?>
 
   <footer class="page-footer">
     <div class="container">
@@ -209,3 +159,8 @@
   
 </body>
 </html>
+
+<?php
+  unset($_SESSION["error"]);
+  unset($_SESSION["gene"]);
+?> 
