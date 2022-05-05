@@ -70,9 +70,9 @@
           <div class="sidebar">
             <div class="sidebar-block">
               <h3 class="sidebar-title">Search</h3> <!-- justify-content-center -->
-              <form action="#" class="search-form">
+              <form action="connection_gene.php" class="search-form">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Enter disease name...">
+                  <input type="text" name = "disease" class="form-control" placeholder="Enter disease name...">
                   <button type="submit" class="btn"><span class="icon mai-search"></span></button>
                 </div>
               </form>
@@ -92,17 +92,33 @@
                       <h3 class="sidebar-title">Gene</h3>
                       <div class="blog-item">
                         <div class="content">
-                          <h5 class="post-title">TESTING THIS LALALALALALALA </h5>
+                          <h5 class="post-title"> <?php
+                                                  session_start();
+                                                  if(isset($_SESSION['gene'])) {
+                                                    $gene = $_SESSION['gene'];
+                                                    echo "<span> sequence: $gene[1] </span>";
+                                                  }
+                                                ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
-                          <h5 class="post-title">MY BABIESSSSS WORKKKKKVVVV </h5>
+                          <h5 class="post-title"> <?php
+                                                  if(isset($_SESSION['gene'])) {
+                                                    $gene = $_SESSION['gene'];
+                                                    echo "<span> code: $gene[2] </span>";
+                                                  }
+                                                ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
-                          <h5 class="post-title">HELLOOOOOO PEOPLEEEEEE</h5>
+                          <h5 class="post-title"> <?php
+                                                  if(isset($_SESSION['gene'])) {
+                                                    $gene = $_SESSION['gene'];
+                                                    echo "<span> location: $gene[3] </span>";
+                                                  }
+                                                ?> </h5>
                         </div>
                       </div>
                     </div>
