@@ -8,12 +8,14 @@
 	$select = "SELECT * FROM genes WHERE id IN (SELECT gene_id FROM genes_has_diseases WHERE disease_id = (SELECT id FROM diseases WHERE name='$disease'))";
 	$output = mysqli_query($connect, $select);
 	$count = mysqli_num_rows($output);
+	$result = [];
 
 	if ($count > 0) {
 
 		while ($gene = mysqli_fetch_row($output)) {
-			$_SESSION['gene'] = $gene; 
+			$result[] = $gene; 
 		}
+		$_SESSION['gene'] = $result;
 		header('location:search_tool.php');
 	}
 	else {

@@ -80,6 +80,9 @@
   }
   else {
     //while
+
+    if(isset($_SESSION['gene'])) {
+      $result = $_SESSION['gene'];
   ?>
 
   <div class="page-section">
@@ -87,47 +90,41 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="row">
-            <!-- <?php  
-            //for($i=0; $i < 4; $i++) {
+            <?php  
+            for($i=0; $i < count($result); $i++) {
 
-            ?> -->
-            <div class="col-sm-6 py-3">
+            ?>
+            <div class="col-sm-4 py-3" style="overflow-wrap: anywhere;">
                   <div class="card-blog">
                     <div class="body">
                       <h3 class="sidebar-title">Gene</h3>
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
-                                                  if(isset($_SESSION['gene'])) {
-                                                    $gene = $_SESSION['gene'];
-                                                    echo "<span> Code: $gene[2] </span>";
-                                                  }
+                                                    echo "<span> Code: " . $result[$i][2] . "</span>";
                                                 ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
-                                                  if(isset($_SESSION['gene'])) {
-                                                    $gene = $_SESSION['gene'];
-                                                    echo "<span> Location: $gene[3] </span>";
-                                                  }
+                                                    echo "<span> Location: " . $result[$i][3] . "</span>";
                                                 ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
-                                                  if(isset($_SESSION['gene'])) {
-                                                    $gene = $_SESSION['gene'];
-                                                    echo "<span> Sequence: $gene[1]  </span>";
-                                                  }
+                                                    echo "<span> Sequence: " . $result[$i][1] . "</span>";
                                                 ?> </h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <?php
+                }
+                ?>
           </div> <!-- .row -->
         </div>
       </div> <!-- .row -->
@@ -135,7 +132,7 @@
   </div> <!-- .page-section -->
 
   <?php
-    //}
+    }
   }
   ?>
 
