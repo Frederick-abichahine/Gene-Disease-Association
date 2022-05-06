@@ -142,7 +142,7 @@
               <div class="circle-shape bg-accent text-white">
                 <span class="mai-home-outline"></span>
               </div>
-              <a class="nav-link" href="index.php"><span>Hospitals</span></a>
+              <a class="nav-link" href="hospitals.php"><span>Hospitals</span></a>
               <!--<p><span>One</span>-Health Pharmacy</p>-->
             </div>
           </div>

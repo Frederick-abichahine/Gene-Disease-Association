@@ -31,7 +31,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">Cases</span> - Patient Information</a>
+        <a class="navbar-brand"><span class="text-primary">Cases</span> - Patient Information</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -83,12 +83,10 @@
         <div class="col-lg-10">
 
           <div class="row">
-
             <?php  
             for($i=0; $i < count($result); $i++) {
 
             ?>
-
             <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
               <div class="card-doctor">
                 <div class="header">
@@ -107,10 +105,11 @@
                 </div>
               </div>
             </div>
+            <?php
+            }
+            ?>
           </div>
-          <?php
-          }
-          ?>
+
         </div>
       </div>
     </div> <!-- .container -->
@@ -140,3 +139,7 @@
   
 </body>
 </html>
+
+<?php
+  unset($_SESSION['error']);
+?> 
