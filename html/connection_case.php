@@ -11,6 +11,8 @@
 	$count = mysqli_num_rows($output);
 	$result = [];
 
+	
+
 	if ($count > 0) {
 
 		while ($case = mysqli_fetch_row($output)) {
