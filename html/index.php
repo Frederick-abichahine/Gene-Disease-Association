@@ -39,7 +39,7 @@
                                                               session_start();
                                                               if(isset($_SESSION["details"])){
                                                                 $details = $_SESSION["details"];
-                                                                echo "<span> $details[0]</span>";
+                                                                echo "<span> $details[3]</span>";
                                                               }
                                                             ?> </a> <!-- +00 123 4455 6666 -->
               <span class="divider">|</span>
@@ -61,7 +61,7 @@
         <a class="navbar-brand"><span class="text-primary"> Dr.</span> <?php
                                                                         if(isset($_SESSION['details'])) {
                                                                           $details = $_SESSION['details'];
-                                                                          echo "<span> $details[1] $details[2] - $details[3]</span>";
+                                                                          echo "<span> $details[1] $details[2] - $details[5]</span>";
                                                                         }
                                                                       ?> </a>
 

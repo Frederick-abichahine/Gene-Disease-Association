@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <?php  
+  include('connection_case.php');
+  ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,7 +31,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">Doctor</span> Contact Page</a>
+        <a class="navbar-brand" href="#"><span class="text-primary">Cases</span> - Patient Information</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,7 +51,7 @@
     </nav>
   </header>
 
-  <div class="page-banner overlay-dark bg-image" style="background-image: url(Doctor_image.jpg);">
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(case_image.jpg);">
     <div class="banner-section">
       <div class="container text-center wow fadeInUp">
         <nav aria-label="Breadcrumb">
@@ -62,6 +65,18 @@
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
+  <?php
+  //session_start();
+  if(isset($_SESSION["error"])){
+    $error = $_SESSION["error"];
+    echo "<div style=\"text-align: center;padding: 25px; background-color: hsl(0, 100%, 70%);\"> $error</div>";
+  }
+  else {
+    //while
+    if(isset($_SESSION['case'])) {
+      $result = $_SESSION['case'];
+  ?>
+
   <div class="page-section bg-light">
     <div class="container">
       <div class="row justify-content-center">
@@ -69,130 +84,47 @@
 
           <div class="row">
 
+            <?php  
+            for($i=0; $i < count($result); $i++) {
+
+            ?>
+
             <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
               <div class="card-doctor">
                 <div class="header">
-                  <img src="../assets/img/doctors/doctor_1.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-mail"></span></a>
+                  <img src="patient_profile.jpg" alt="">
+                  <div class="meta" style="left:60px!important">
+                    <a href="#"><span class="mai-trash"></span></a>
+                    <!-- <a href="#"><span class="mai-mail"></span></a> -->
                     <!-- <a href="#"><span class="mai-doccument-text-outline"></span></a> -->
                   </div>
                 </div>
                 <div class="body">
-                  <p class="text-xl mb-0">Patient First & Last Name</p>
+                  <p class="text-xl mb-0"><?php
+                                            echo "<span>" . $result[$i][1] . " " . $result[$i][2] . "</span>";
+                                        ?></p>
                   <a href = "#"> <span class="text-sm text-grey">More details</span></a>
                 </div>
               </div>
             </div>
-            
-            <!-- <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_1.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Stein Albert</p>
-                  <span class="text-sm text-grey">Cardiology</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-                  <span class="text-sm text-grey">Dental</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                  <span class="text-sm text-grey">General Health</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_1.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Stein Albert</p>
-                  <span class="text-sm text-grey">Cardiology</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-                  <span class="text-sm text-grey">Dental</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                  <span class="text-sm text-grey">General Health</span>
-                </div>
-              </div>
-            </div> -->
-
           </div>
-
+          <?php
+          }
+          ?>
         </div>
       </div>
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
+  <?php
+    }
+  }
+  ?>
+
   <footer class="page-footer">
     <div class="container">
       <hr>
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+      <p id="copyright">Copyright &copy; 2022 - Frederick Abi Chahine. All right reserved</p>
     </div>
   </footer>
 

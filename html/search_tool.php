@@ -72,11 +72,12 @@
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
+
   <?php
   session_start();
   if(isset($_SESSION["error"])){
     $error = $_SESSION["error"];
-    echo "<span style=\"color:red\"> $error</span>";
+    echo "<div style=\"text-align: center;padding: 25px; background-color: hsl(0, 100%, 70%);\"> $error</div>";
   }
   else {
     //while
@@ -84,11 +85,9 @@
     if(isset($_SESSION['gene'])) {
       $result = $_SESSION['gene'];
   ?>
-
   <div class="page-section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
+        <div >
           <div class="row">
             <?php  
             for($i=0; $i < count($result); $i++) {
@@ -102,21 +101,21 @@
                         <div class="content">
                           <h5 class="post-title"> <?php
                                                     echo "<span> Code: " . $result[$i][2] . "</span>";
-                                                ?> </h5>
+                                                  ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
                                                     echo "<span> Location: " . $result[$i][3] . "</span>";
-                                                ?> </h5>
+                                                  ?> </h5>
                         </div>
                       </div>
                       <div class="blog-item">
                         <div class="content">
                           <h5 class="post-title"> <?php
                                                     echo "<span> Sequence: " . $result[$i][1] . "</span>";
-                                                ?> </h5>
+                                                  ?> </h5>
                         </div>
                       </div>
                     </div>
@@ -127,7 +126,6 @@
                 ?>
           </div> <!-- .row -->
         </div>
-      </div> <!-- .row -->
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
