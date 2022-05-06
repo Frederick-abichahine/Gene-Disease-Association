@@ -8,7 +8,7 @@
 	$hash_pass = hash('sha256', $password);
 
 	$error = "Invalid Email or Password.";
-	$select = "SELECT mobile_number, first_name, last_name, specialty FROM doctors WHERE email='$email' AND password='$hash_pass'";
+	$select = "SELECT * FROM doctors WHERE email='$email' AND password='$hash_pass'";
 	$output = mysqli_query($connect, $select);
 	$count = mysqli_num_rows($output);
 

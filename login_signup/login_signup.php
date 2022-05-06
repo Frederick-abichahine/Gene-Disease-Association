@@ -43,7 +43,7 @@
             <input id="login-password" type="password" name="password" required placeholder="Password">
           </div>
         </fieldset>
-        <button type="submit" class="btn-login">Login</button>
+        <button  style="  background-color: #00D9A5   ;"   type="submit" class="btn-login">Login</button>
       </form>
     </div>
     <div class="form-wrapper">
@@ -98,7 +98,7 @@
             <input id="signup-password-confirm" type="password" required placeholder="Password">
           </div> -->
         </fieldset>
-        <button type="submit" class="btn-signup">Continue</button>
+        <button style="  box-shadow: inset 0 0 0 2px #00D9A5!important   ;color: #00D9A5;" type="submit" class="btn-signup">Continue</button>
       </form>
     </div>
   </div>
