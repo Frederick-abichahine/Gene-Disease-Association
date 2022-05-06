@@ -81,7 +81,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
-
+          <form method="post" action = "connection_remove_patient.php">
           <div class="row">
             <?php  
             for($i=0; $i < count($result); $i++) {
@@ -91,8 +91,8 @@
               <div class="card-doctor">
                 <div class="header">
                   <img src="patient_profile.jpg" alt="">
-                  <div class="meta" style="left:60px!important">
-                    <a href="#"><span class="mai-trash"></span></a>
+                  <div class="meta" style="left:60px!important" >
+                    <button name = "idz" value = <?php echo $i; ?>><span class="mai-trash"></span></button>
                     <!-- <a href="#"><span class="mai-mail"></span></a> -->
                     <!-- <a href="#"><span class="mai-doccument-text-outline"></span></a> -->
                   </div>
@@ -109,7 +109,7 @@
             }
             ?>
           </div>
-
+        </form>
         </div>
       </div>
     </div> <!-- .container -->
