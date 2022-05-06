@@ -16,7 +16,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Login #2</title>
+    <title>Edit Profile</title>
   </head>
   <body>  
 
@@ -29,6 +29,13 @@
           <div class="col-md-7">
             <!-- <h4>Edit <strong>Profile Information</strong></h4> -->
             <form action="connection_edit.php" method="post">
+              <?php
+              session_start();
+              if(isset($_SESSION["error"])){
+                $error = $_SESSION["error"];
+                echo "<span style=\"color:red\"> $error</span>";
+              }
+            ?>
               <div class="form-group first">
                 <label for="username">First Name</label>
                 <input type="text" name = "first_name" class="form-control" required placeholder="Hello" id="username">
@@ -85,3 +92,7 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+<?php
+  unset($_SESSION["error"]);
+?> 
